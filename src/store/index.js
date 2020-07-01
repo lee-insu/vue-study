@@ -4,8 +4,21 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-	state: {},
-	mutations: {},
+	state: {
+		nickname: '',
+	},
+	mutations: {
+		setUsername(state, nickname) {
+			state.nickname = nickname;
+		},
+		clearUsername(state) {
+			state.nickname = '';
+		},
+	},
 	actions: {},
-	modules: {},
+	getters: {
+		isLogin(state) {
+			return state.nickname !== '';
+		},
+	},
 });
